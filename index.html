@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>data-flow</title>
+
+  </head>
+<body>
+<div class="mermaid">
+graph LR
+    index.html/カテゴリー選択画面 --> |ラーメン|ramen.html
+    index.html/カテゴリー選択画面 --> |カフェ|cafe.html
+    index.html/カテゴリー選択画面 --> |タピオカ|tapioka.html
+    index.html/カテゴリー選択画面 --> |アパレル|apareru.html
+    index.html/カテゴリー選択画面 --> |観光地|kannkou.html
+    ramen.html -->　|店名情報|Googleサービス/ルーティング
+    cafe.html　-->　|店名情報|Googleサービス/ルーティング
+    tapioka.html -->　|店名情報|Googleサービス/ルーティング
+    apareru.html -->　|店名情報|Googleサービス/ルーティング
+    kannkou.html -->　|店名情報|Googleサービス/ルーティング
+    ramen.html -->　ramen.html/地図表示
+    cafe.html -->　cafe.html/地図表示
+    tapioka.html -->　tapioka.html/地図表示
+    apareru.html -->　apareru.html/地図表示
+    kannkou.html -->　kannkou.html/地図表示
+    Googleサービス/ルーティング -->　|地図表示|ramen.html/地図表示
+    Googleサービス/ルーティング -->　|地図表示|cafe.html/地図表示
+    Googleサービス/ルーティング -->　|地図表示|tapioka.html/地図表示　
+    Googleサービス/ルーティング -->　|地図表示|apareru.html/地図表示　
+    Googleサービス/ルーティング -->　|地図表示|kannkou.html/地図表示　
+
+</div>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
